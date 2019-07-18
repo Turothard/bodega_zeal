@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
+/*
+Rutas de bodega
+ */
+Route::get('/bodega', 'BodegaController@index');
+Route::get('/bodega/recepcion', 'BodegaController@recepcion');
+Route::get('/bodega/movimientos', 'BodegaController@movimientos');
+Route::get('/bodega/pedidos', 'BodegaController@pedidos');
+Route::get('/bodega/inventario', 'BodegaController@inventario');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
